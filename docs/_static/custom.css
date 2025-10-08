@@ -1,0 +1,6 @@
+/* Làm chữ footer nhỏ và dịu hơn */
+.footer-extra p {
+  font-size: 0.85rem;
+  color: var(--color-foreground-secondary);
+  margin: 0;
+}
