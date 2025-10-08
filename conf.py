@@ -1,20 +1,30 @@
 import os
 from datetime import datetime
 
+# --- Project info ---
 project = "FRC Tutorials"
 author = "Contributors"
 copyright = f"{datetime.now().year} {author}"
 
-extensions = ["myst_parser", "sphinx_copybutton"]
+# --- Extensions ---
+extensions = [
+    "myst_parser",        # đọc Markdown (MyST)
+    "sphinx_copybutton",  # nút copy cho code block
+]
 
-myst_enable_extensions = ["deflist", "tasklist", "attrs_block", "attrs_inline", "substitution"]
+# MyST options
+myst_enable_extensions = [
+    "deflist", "tasklist", "attrs_block", "attrs_inline", "substitution"
+]
 myst_heading_anchors = 3
 
+# Vì conf.py nằm ở root, trỏ vào thư mục dưới docs/
 templates_path = ["docs/_templates"]
 html_static_path = ["docs/_static"]
 exclude_patterns = ["_build"]
 language = "vi"
 
+# --- Theme ---
 html_theme = "furo"
 html_title = "FRC Tutorials"
 html_baseurl = ""
@@ -32,4 +42,5 @@ html_theme_options = {
 }
 
 def setup(app):
+    # nạp CSS tùy biến trong docs/_static/custom.css
     app.add_css_file("custom.css")
